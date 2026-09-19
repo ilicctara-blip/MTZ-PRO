@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* Polices auto-hébergées via Fontsource (font-display: swap), pas de <link> Google Fonts. */
+@import "@fontsource/poppins/latin-400.css";
+@import "@fontsource/poppins/latin-500.css";
+@import "@fontsource/poppins/latin-600.css";
+@import "@fontsource/poppins/latin-800.css";
+
+/*
+  Jetons de design.
+  Une seule couleur d'accent : le jaune de la carte de visite (#FFDD57).
+  Le reste est neutre (zinc), en clair et en sombre (suit le réglage du système).
+*/
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-brand: #ffdd57;
+  --color-brand-hover: #f6cd2f;
+}
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  html {
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgb(255 221 87 / 0.35);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-zinc-50 font-sans text-zinc-950 antialiased dark:bg-zinc-950 dark:text-zinc-50;
+  }
+
+  a,
+  button {
+    touch-action: manipulation;
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: #09090b;
+  }
+}
