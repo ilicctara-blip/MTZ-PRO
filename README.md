@@ -23,7 +23,11 @@ npm run build    # version de production dans dist/
 2. La déposer dans `public/images/`.
 3. Ajouter une entrée dans `PHOTOS` puis dans `GALLERY` (`src/content.js`), avec un texte `alt` qui décrit la photo.
 
-## Hébergement
+## Hébergement sur GitHub Pages
 
-Le dossier `dist/` est un site statique : Netlify, Vercel, Cloudflare Pages ou n'importe quel hébergeur classique.
-Le site est prévu pour être servi à la racine du domaine (chemins `/images/...`).
+1. Dans `vite.config.ts`, vérifier que `REPO_NAME` est le nom exact du dépôt GitHub.
+2. Envoyer le projet sur GitHub (branche `main`).
+3. Sur GitHub : Settings > Pages > Source : choisir **GitHub Actions**.
+4. Chaque envoi sur `main` déclenche le déploiement (fichier `.github/workflows/deploy.yml`).
+
+Le site sera disponible sur `https://<utilisateur>.github.io/<nom-du-depot>/`.
